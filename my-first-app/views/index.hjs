@@ -9,7 +9,18 @@
 	<div class="container">
 		<h1>This is the {{name}} Template</h1>
 		<p>Today is {{date}}</p>	
-		<img style="width: 200px" src="/images/puppy.jpg">
+		<ol>
+			<!-- This is a for loop for the array in an hjs -->
+			{{#profiles}}
+				<li>
+					{{name}}, {{city}}, 
+					<!-- This is an if/else conditional in hjs -->
+					{{#profession}}
+						profession: {{profession}}
+					{{/profession}}
+				</li>
+			{{/profiles}}
+		</ol>
 	</div>
 	
 

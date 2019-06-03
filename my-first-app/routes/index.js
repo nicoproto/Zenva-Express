@@ -5,7 +5,12 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
 	const data = {
 		name: 'Home',
-		date: 'June 1, 2019'
+		date: 'June 1, 2019',
+		profiles: [
+			{name: 'Mike', city: 'Sydney', profession: 'doctor'},
+			{name: 'Cindy', city: 'Perth', profession: 'lawyer'},
+			{name: 'Joe', city: 'Sydeny', profession: 'programmer'}
+		]
 	};
 	res.render('index', data);
 

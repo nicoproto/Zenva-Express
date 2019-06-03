@@ -1,9 +1,17 @@
 <html>
-<head></head>
+<head>
+	<!-- Dont need to say the page its on 'public' cause its implied in the routes file -->
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+</head>
 
 <body>
-	<h1>This is the {{name}} Template</h1>
-	<p>Today is {{date}}</p>
+	<div class="container">
+		<h1>This is the {{name}} Template</h1>
+		<p>Today is {{date}}</p>	
+		<img style="width: 200px" src="/images/puppy.jpg">
+	</div>
+	
 
 </body>
 

@@ -10,12 +10,10 @@ const profiles = [
 router.get('/', (req, res, next) => {
 	const data = {
 		name: 'Home',
-		date: 'June 1, 2019',
+		date: req.timestamp,
 		profiles: profiles
 	};
 	res.render('index', data);
-
-
 });
 
 router.post('/join', (req, res, next) => {
@@ -26,7 +24,7 @@ router.post('/join', (req, res, next) => {
 });
 
 router.get('/json', (req, res, next) => {
-	const data = {name: 'David', location: 'Sydney'};
+	const data = {name: 'David', location: 'Sydney', date: req.timestamp};
 	res.json(data);
 });
 

@@ -7,7 +7,14 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 // Enables to extract the form data from the post request
-app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({extended:false}));
+
+// Middleware
+app.use((req, res, next) => {
+	req.timestamp = new Date().toString();
+	// This tells the function to go to the next function
+	next();
+});
 
 app.use('/', routes);
 // Defines views directory

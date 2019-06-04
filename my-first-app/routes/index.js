@@ -33,9 +33,11 @@ router.post('/login', (req, res, next) => {
 		return;
 	}
 
-	res.json({
-		data: 'failed login'
-	});
+	const data = {
+		message: 'Please check your password and/or username.'
+	};
+	res.render('error', data);
+
 	
 });
 

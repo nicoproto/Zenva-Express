@@ -1,20 +1,28 @@
 const express = require('express');
 const router = express.Router();
 
+const profiles = [
+	{name: 'Mike', city: 'Sydney', profession: 'doctor'},
+	{name: 'Cindy', city: 'Perth', profession: 'lawyer'},
+	{name: 'Joe', city: 'Sydeny', profession: 'programmer'}
+];
 
 router.get('/', (req, res, next) => {
 	const data = {
 		name: 'Home',
 		date: 'June 1, 2019',
-		profiles: [
-			{name: 'Mike', city: 'Sydney', profession: 'doctor'},
-			{name: 'Cindy', city: 'Perth', profession: 'lawyer'},
-			{name: 'Joe', city: 'Sydeny', profession: 'programmer'}
-		]
+		profiles: profiles
 	};
 	res.render('index', data);
 
 
+});
+
+router.post('/join', (req, res, next) => {
+	const body = req.body;
+	profiles.push(body);
+
+	res.redirect('/');
 });
 
 router.get('/json', (req, res, next) => {
